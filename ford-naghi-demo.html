@@ -1,181 +1,473 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vehicles | Ford Mohamed Yousuf Naghi Motors</title>
-<!-- ==== ADD YOUR EMARSYS WEB EXTEND SNIPPET HERE (head) ==== -->
-<style>
-:root{--navy:#00095b;--btn:#0b5fe6;--ink:#1d1d1d;--pad:clamp(20px,7vw,104px)}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"FordAntenna","Ford Antenna","Segoe UI",Helvetica,Arial,sans-serif;color:var(--navy);background:#fff;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer;border:0}
-:focus-visible{outline:3px solid var(--btn);outline-offset:3px}
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Vehicles | Ford Mohamed Yousuf Naghi Motors</title>
+   <!-- ==== ADD YOUR EMARSYS WEB EXTEND SNIPPET HERE (head) ==== -->
+   <style>
 
-/* ---------- header ---------- */
-header{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:96px;padding:0 44px;background:#fff;position:sticky;top:0;z-index:20}
-.nav{display:flex;gap:34px;font-weight:700;font-size:19px;letter-spacing:.2px}
-.nav a:hover{text-decoration:underline;text-underline-offset:6px}
-.logo{display:block;width:132px}
-.logo img{width:100%;display:block}
-.right{display:flex;align-items:center;justify-content:flex-end;gap:36px;color:#000}
-.dealer{font-size:13px;font-weight:700;line-height:1.25;text-align:right}
-.dealer .ar{display:block;font-size:12px;font-weight:600}
-.burger{display:none;background:none;color:var(--navy)}
+      :root {
+         --navy: #00095b;
+         --btn: #0b5fe6;
+         --ink: #1d1d1d;
+         --pad: clamp(20px, 7vw, 104px)
+      }
 
-/* ---------- category sections ---------- */
-.cat{padding:64px var(--pad) 60px}
-.cat h2{font-size:clamp(38px,4.6vw,60px);font-weight:400;line-height:1.1;margin:0 0 34px 10px;color:var(--navy)}
-.row{display:grid;grid-template-columns:repeat(4,1fr);align-items:start}
-.v{padding-right:18px;display:flex;flex-direction:column;align-items:flex-start}
-.v .pic{width:100%;height:230px;display:flex;align-items:center;justify-content:center;margin-bottom:22px}
-.v .pic img{max-width:100%;max-height:100%;object-fit:contain;display:block}
-.v .pic svg{width:92%;opacity:.8}
-.v h3{font-size:clamp(26px,2.9vw,38px);font-weight:400;line-height:1.28;color:var(--navy);margin-bottom:22px;min-height:2.56em}
-.v .btn{background:var(--btn);color:#fff;border-radius:999px;padding:17px 36px;font-size:18px;font-weight:600;letter-spacing:.2px;transition:filter .15s}
-.v .btn:hover{filter:brightness(.9)}
-.v.empty{visibility:hidden}
+      * {
+         box-sizing: border-box;
+         margin: 0;
+         padding: 0
+      }
 
-.pager{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:46px;color:#2d3340;font-size:22px}
-.pager button{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#555;color:#fff}
-.pager button:disabled{background:#a9a9a9;cursor:default}
-.pager svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+      body {
+         font-family: "FordAntenna", "Ford Antenna", "Segoe UI", Helvetica, Arial, sans-serif;
+         color: var(--navy);
+         background: #fff;
+         -webkit-font-smoothing: antialiased
+      }
 
-footer{background:var(--navy);color:#c9cdea;padding:40px var(--pad);font-size:14px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-footer a:hover{text-decoration:underline}
+      a {
+         color: inherit;
+         text-decoration: none
+      }
 
-.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,40px);background:var(--navy);color:#fff;padding:13px 24px;border-radius:999px;opacity:0;transition:.3s;z-index:50;font-size:15px;pointer-events:none}
-.toast.show{transform:translate(-50%,0);opacity:1}
+      button {
+         font: inherit;
+         cursor: pointer;
+         border: 0
+      }
 
-@media(max-width:1000px){.row{grid-template-columns:repeat(2,1fr);row-gap:30px}.nav{gap:20px;font-size:16px}.dealer{display:none}}
-@media(max-width:700px){
- header{grid-template-columns:auto 1fr auto;padding:0 18px;height:76px}
- .nav{display:none}.burger{display:block}
- .nav.open{display:flex;flex-direction:column;position:absolute;top:76px;left:0;right:0;background:#fff;padding:10px 24px 20px;gap:18px;box-shadow:0 8px 16px rgba(0,0,0,.1)}
- .logo{width:100px;justify-self:center;grid-column:2}
- .row{grid-template-columns:1fr 1fr}.v .pic{height:140px}.v .btn{padding:13px 22px;font-size:15px}
-}
-@media(prefers-reduced-motion:reduce){*{transition:none!important}}
-</style>
-</head>
-<body>
-<!-- ==== ADD YOUR EMARSYS WEB EXTEND SNIPPET HERE (body start, if needed) ==== -->
+      :focus-visible {
+         outline: 3px solid var(--btn);
+         outline-offset: 3px
+      }
 
-<header>
- <button class="burger" id="burger" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
- <nav class="nav" id="nav" aria-label="Main">
-  <a href="#">Vehicles</a><a href="#">Shop</a><a href="#">Owner</a><a href="#">Latest Offers</a>
- </nav>
- <a class="logo" href="#" aria-label="Ford">
-  <img id="logoImg" alt="Ford" src="">
- </a>
- <div class="right">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00095b" stroke-width="1.4" aria-label="Language"><circle cx="12" cy="12" r="10"/><ellipse cx="12" cy="12" rx="4.2" ry="10"/><path d="M2 12h20M4 6.5h16M4 17.5h16"/></svg>
-  <div class="dealer"><span class="ar">شركة محمد يوسف ناغي للسيارات</span>Mohamed Yousuf Naghi Motors Co.</div>
- </div>
-</header>
+      /* ---------- header ---------- */
+      header {
+         display: grid;
+         grid-template-columns: 1fr auto 1fr;
+         align-items: center;
+         height: 96px;
+         padding: 0 44px;
+         background: #fff;
+         position: sticky;
+         top: 0;
+         z-index: 20
+      }
 
-<main id="sections"></main>
+      .nav {
+         display: flex;
+         gap: 34px;
+         font-weight: 700;
+         font-size: 19px;
+         letter-spacing: .2px
+      }
 
-<footer>
- <span>&copy; 2026 Mohamed Yousuf Naghi Motors Co. Demo replica for presentation purposes.</span>
- <span><a href="tel:920029700">Toll-free 920029700</a></span>
-</footer>
-<div class="toast" id="toast" role="status"></div>
+      .nav a:hover {
+         text-decoration: underline;
+         text-underline-offset: 6px
+      }
 
-<script>
-/* =====================================================================
-   1) IMAGE ASSETS - paste the real image URLs (or relative paths like
-      "images/territory.png") from the client's site here. If a path is
-      empty or fails to load, a grey silhouette is shown instead.
-   ===================================================================== */
-var LOGO = "";   // Ford script logo (svg/png). Fallback below is drawn in SVG.
-var IMG = {
- territory:"", everest:"", expedition:"", bronco:"",
- explorer:"", edge:"", escape:"", broncosport:"",
- expeditionmax:"", everestsport:"", territorytrend:"", explorerst:"",
- ranger:"", rangerraptor:"", f150:"", f150raptor:"",
- mustang:"", taurus:"", transit:"", transitcustom:""
-};
+      .logo {
+         display: block;
+         width: 104px
+      }
 
-/* =====================================================================
-   2) CATALOGUE - edit names/ids to match the client's list exactly
-   ===================================================================== */
-var CATS = [
- {name:"Trucks",icon:"truck",items:[["ranger","2026 Ranger"],["rangerraptor","2026 Ranger Raptor"],["f150","2026 F-150"],["f150raptor","2026 F-150 Raptor"]]},
- {name:"SUVs",icon:"suv",items:[
-  ["territory","2026 Territory"],["everest","2026 Everest"],["expedition","2026 Expedition"],["bronco","2026 Bronco"],
-  ["explorer","2026 Explorer"],["edge","2026 Edge"],["escape","2026 Escape"],["broncosport","2026 Bronco Sport"],
-  ["expeditionmax","2026 Expedition Max"],["everestsport","2026 Everest Sport"],["territorytrend","2026 Territory Trend"],["explorerst","2026 Explorer ST"]]},
- {name:"Cars",icon:"sedan",items:[["mustang","2026 Mustang"],["taurus","2026 Taurus"]]},
- {name:"Commercial",icon:"van",items:[["transit","2026 Transit"],["transitcustom","2026 Transit Custom"]]}
-];
-var PER = 4;
+      .logo img {
+         width: 100%;
+         display: block
+      }
 
-var SIL = {
- truck:'<path d="M8 78V60l10-4 58-6 28-22q4-4 10-4h52q6 0 10 4l22 22h56q14 0 14 14v14q0 4-4 4h-14a24 24 0 0 0-48 0H112a24 24 0 0 0-48 0H12q-4 0-4-4z" fill="#c9ced8"/><circle cx="88" cy="82" r="17" fill="#8b93a3"/><circle cx="244" cy="82" r="17" fill="#8b93a3"/>',
- suv:'<path d="M10 80V62q0-8 8-10l40-8 26-26q4-4 10-4h92q8 0 13 5l30 28 48 8q10 2 10 12v13q0 4-4 4h-12a24 24 0 0 0-48 0H100a24 24 0 0 0-48 0H14q-4 0-4-4z" fill="#c9ced8"/><circle cx="76" cy="82" r="18" fill="#8b93a3"/><circle cx="226" cy="82" r="18" fill="#8b93a3"/>',
- sedan:'<path d="M8 80V66q0-8 8-10l54-10 34-20q6-4 14-4h52q10 0 16 6l26 18 62 10q14 2 14 14v10q0 4-4 4h-16a22 22 0 0 0-44 0H92a22 22 0 0 0-44 0H12q-4 0-4-4z" fill="#c9ced8"/><circle cx="70" cy="82" r="17" fill="#8b93a3"/><circle cx="238" cy="82" r="17" fill="#8b93a3"/>',
- van:'<path d="M8 82V30q0-10 10-10h160q10 0 16 8l40 30 44 8q14 3 14 14v10q0 4-4 4h-14a22 22 0 0 0-44 0H90a22 22 0 0 0-44 0H12q-4 0-4-4z" fill="#c9ced8"/><circle cx="68" cy="84" r="17" fill="#8b93a3"/><circle cx="244" cy="84" r="17" fill="#8b93a3"/>'
-};
-var FORD_SVG = 'data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 66"><text x="80" y="52" text-anchor="middle" font-family="Brush Script MT,Segoe Script,cursive" font-style="italic" font-weight="700" font-size="58" fill="#00095b">Ford</text></svg>');
+      .right {
+         display: flex;
+         align-items: center;
+         justify-content: flex-end;
+         gap: 36px;
+         color: #000
+      }
 
-var $=function(s){return document.querySelector(s)};
-var page={};
+      .dealer {
+         font-size: 13px;
+         font-weight: 700;
+         line-height: 1.25;
+         text-align: right
+      }
 
-function track(name,data){
- var d=data||{};console.log("[demo-event]",name,d);
- document.dispatchEvent(new CustomEvent("demo:event",{detail:{name:name,data:d}}));
-}
-function toast(m){var t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(function(){t.classList.remove("show")},2400)}
+      .dealer .ar {
+         display: block;
+         font-size: 12px;
+         font-weight: 600
+      }
 
-function card(cat,it){
- var id=it[0],name=it[1],src=IMG[id];
- var pic=src?'<img src="'+src+'" alt="'+name+'" data-fb="'+cat.icon+'">':'<svg viewBox="0 0 300 110" aria-hidden="true">'+SIL[cat.icon]+'</svg>';
- return '<article class="v" data-product-id="'+id+'" data-category="'+cat.name+'"><div class="pic">'+pic+'</div><h3 class="product-name">'+name+'</h3><button class="btn" data-id="'+id+'" data-cat="'+cat.name+'" data-name="'+name+'">Explore Vehicle</button></article>';
-}
+      .burger {
+         display: none;
+         background: none;
+         color: var(--navy)
+      }
 
-function drawCat(ci){
- var cat=CATS[ci],pg=page[ci]||0,pages=Math.ceil(cat.items.length/PER);
- var slice=cat.items.slice(pg*PER,pg*PER+PER);
- var html=slice.map(function(it){return card(cat,it)}).join("");
- for(var i=slice.length;i<PER;i++)html+='<div class="v empty"></div>';
- var el=document.getElementById("cat"+ci);
- el.querySelector(".row").innerHTML=html;
- var pg_=el.querySelector(".pager");
- if(pages>1){
-  pg_.style.display="flex";
-  pg_.querySelector(".prev").disabled=pg===0;
-  pg_.querySelector(".next").disabled=pg===pages-1;
-  pg_.querySelector(".num").textContent=(pg+1)+" / "+pages;
- }else pg_.style.display="none";
- el.querySelectorAll("img[data-fb]").forEach(function(im){im.onerror=function(){im.outerHTML='<svg viewBox="0 0 300 110">'+SIL[im.dataset.fb]+'</svg>'}});
-}
+      /* ---------- category sections ---------- */
+      .cat {
+         padding: 64px var(--pad) 60px
+      }
 
-var CH='<svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>',CR='<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>';
-$("#sections").innerHTML=CATS.map(function(c,i){
- return '<section class="cat" id="cat'+i+'" data-category="'+c.name+'"><h2>'+c.name+'</h2><div class="row"></div>'+
-  '<div class="pager"><button class="prev" aria-label="Previous">'+CH+'</button><span class="num"></span><button class="next" aria-label="Next">'+CR+'</button></div></section>';
-}).join("");
-CATS.forEach(function(c,i){page[i]=0;drawCat(i)});
+      .cat h2 {
+         font-size: clamp(38px, 4.6vw, 60px);
+         font-weight: 400;
+         line-height: 1.1;
+         margin: 0 0 34px 10px;
+         color: var(--navy)
+      }
 
-document.addEventListener("click",function(e){
- var b=e.target.closest(".btn");
- if(b){track("product_view",{id:b.dataset.id,name:b.dataset.name,category:b.dataset.cat});toast(b.dataset.name+" (demo page)");return}
- var p=e.target.closest(".pager button");
- if(p&&!p.disabled){
-  var sec=p.closest(".cat"),ci=+sec.id.replace("cat","");
-  page[ci]+=p.classList.contains("next")?1:-1;drawCat(ci);
-  track("carousel_page",{category:CATS[ci].name,page:page[ci]+1});
- }
-});
-$("#burger").onclick=function(){$("#nav").classList.toggle("open")};
+      .row {
+         display: grid;
+         grid-template-columns: repeat(4, 1fr);
+         align-items: start
+      }
 
-var logo=$("#logoImg");logo.src=LOGO||FORD_SVG;
-logo.onerror=function(){logo.onerror=null;logo.src=FORD_SVG};
-track("page_view",{page:"vehicles"});
+      .v {
+         padding-right: 18px;
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start
+      }
+
+      .v .pic {
+         width: 100%;
+         height: 230px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         margin-bottom: 22px
+      }
+
+      .v .pic img {
+         max-width: 100%;
+         max-height: 100%;
+         object-fit: contain;
+         display: block
+      }
+
+      .v .pic svg {
+         width: 92%;
+         opacity: .8
+      }
+
+      .v h3 {
+         font-size: clamp(26px, 2.9vw, 38px);
+         font-weight: 400;
+         line-height: 1.28;
+         color: var(--navy);
+         margin-bottom: 22px;
+         min-height: 2.56em
+      }
+
+      .v .btn {
+         background: var(--btn);
+         color: #fff;
+         border-radius: 999px;
+         padding: 17px 36px;
+         font-size: 18px;
+         font-weight: 600;
+         letter-spacing: .2px;
+         transition: filter .15s
+      }
+
+      .v .btn:hover {
+         filter: brightness(.9)
+      }
+
+      .v.empty {
+         visibility: hidden
+      }
+
+      .pager {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         gap: 14px;
+         margin-top: 46px;
+         color: #2d3340;
+         font-size: 22px
+      }
+
+      .pager button {
+         width: 48px;
+         height: 48px;
+         border-radius: 50%;
+         display: grid;
+         place-items: center;
+         background: #555;
+         color: #fff
+      }
+
+      .pager button:disabled {
+         background: #a9a9a9;
+         cursor: default
+      }
+
+      .pager svg {
+         width: 22px;
+         height: 22px;
+         fill: none;
+         stroke: #fff;
+         stroke-width: 2.6;
+         stroke-linecap: round;
+         stroke-linejoin: round
+      }
+
+      footer {
+         background: var(--navy);
+         color: #c9cdea;
+         padding: 40px var(--pad);
+         font-size: 14px;
+         display: flex;
+         justify-content: space-between;
+         gap: 20px;
+         flex-wrap: wrap
+      }
+
+      footer a:hover {
+         text-decoration: underline
+      }
+
+      .toast {
+         position: fixed;
+         left: 50%;
+         bottom: 24px;
+         transform: translate(-50%, 40px);
+         background: var(--navy);
+         color: #fff;
+         padding: 13px 24px;
+         border-radius: 999px;
+         opacity: 0;
+         transition: .3s;
+         z-index: 50;
+         font-size: 15px;
+         pointer-events: none
+      }
+
+      .toast.show {
+         transform: translate(-50%, 0);
+         opacity: 1
+      }
+
+      @media(max-width:1000px) {
+         .row {
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 30px
+         }
+
+         .nav {
+            gap: 20px;
+            font-size: 16px
+         }
+
+         .dealer {
+            display: none
+         }
+      }
+
+      @media(max-width:700px) {
+         header {
+            grid-template-columns: auto 1fr auto;
+            padding: 0 18px;
+            height: 76px
+         }
+
+         .nav {
+            display: none
+         }
+
+         .burger {
+            display: block
+         }
+
+         .nav.open {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 76px;
+            left: 0;
+            right: 0;
+            background: #fff;
+            padding: 10px 24px 20px;
+            gap: 18px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, .1)
+         }
+
+         .logo {
+            width: 100px;
+            justify-self: center;
+            grid-column: 2
+         }
+
+         .row {
+            grid-template-columns: 1fr 1fr
+         }
+
+         .v .pic {
+            height: 140px
+         }
+
+         .v .btn {
+            padding: 13px 22px;
+            font-size: 15px
+         }
+      }
+
+      @media(prefers-reduced-motion:reduce) {
+         * {
+            transition: none !important
+         }
+      }
+   </style>
+   <script type="text/javascript">
+var ScarabQueue = ScarabQueue || [];
+(function(id) {
+  if (document.getElementById(id)) return;
+  var js = document.createElement('script'); js.id = id;
+  js.src = '//cdn.scarabresearch.com/js/1A4660EA5D808BB1/scarab-v2.js';
+  var fs = document.getElementsByTagName('script')[0];
+  fs.parentNode.insertBefore(js, fs);
+})('scarab-js-api');
 </script>
-<!-- ==== ADD YOUR EMARSYS WEB EXTEND SNIPPET HERE (before </body>, if needed) ==== -->
+</head>
+
+<body>
+   <!-- ==== ADD YOUR EMARSYS WEB EXTEND SNIPPET HERE (body start, if needed) ==== -->
+
+   <header>
+      <button class="burger" id="burger" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+            <path d="M3 6h18M3 12h18M3 18h18" />
+         </svg></button>
+      <nav class="nav" id="nav" aria-label="Main">
+         <a href="#">Vehicles</a><a href="#">Shop</a><a href="#">Owner</a><a href="#">Latest Offers</a>
+      </nav>
+      <a class="logo" href="#" aria-label="Ford">
+         <img id="logoImg" alt="Ford" src="">
+      </a>
+      <div class="right">
+         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00095b" stroke-width="1.4"
+            aria-label="Language">
+            <circle cx="12" cy="12" r="10" />
+            <ellipse cx="12" cy="12" rx="4.2" ry="10" />
+            <path d="M2 12h20M4 6.5h16M4 17.5h16" />
+         </svg>
+         <div class="dealer"><span class="ar">شركة محمد يوسف ناغي للسيارات</span>Mohamed Yousuf Naghi Motors Co.</div>
+      </div>
+   </header>
+
+   <main id="sections"></main>
+
+   <footer>
+      <span>&copy; 2026 Mohamed Yousuf Naghi Motors Co. Demo replica for presentation purposes.</span>
+      <span><a href="tel:920029700">Toll-free 920029700</a></span>
+   </footer>
+   <div class="toast" id="toast" role="status"></div>
+
+   <script>
+      /* =====================================================================
+         1) IMAGE ASSETS - paste the real image URLs (or relative paths like
+            "images/territory.png") from the client's site here. If a path is
+            empty or fails to load, a grey silhouette is shown instead.
+         ===================================================================== */
+      var LOGO = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbDpzcGFjZT0icHJlc2VydmUiIHZpZXdCb3g9IjAgMTU1IDUxMiAyMDIiPjxwYXRoIGQ9Ik0yNTYgMTYzLjlDMTE0LjYgMTYzLjkgMCAyMDUgMCAyNTZjMCA1MC45IDExNC42IDkyLjEgMjU2IDkyLjEgMTQxLjUgMCAyNTYtNDEuMiAyNTYtOTIuMSAwLTUxLTExNC41LTkyLjEtMjU2LTkyLjEiIHN0eWxlPSJmaWxsOiMwMDA5NWIiLz48cGF0aCBkPSJNMjU3LjMgMzQwLjFjLTEzNi4yIDAtMjQ2LjYtMzgtMjQ2LjYtODUgMC00Ni45IDExMC40LTg1IDI0Ni42LTg1czI0Ni42IDM4IDI0Ni42IDg1YzAgNDYuOS0xMTAuNCA4NS0yNDYuNiA4NW0wLTE2Mi43Yy0xMzEuNCAwLTIzNy45IDM0LjctMjM3LjkgNzcuNnMxMDYuNSA3Ny42IDIzNy45IDc3LjYgMjM3LjktMzQuOCAyMzcuOS03Ny42LTEwNi41LTc3LjYtMjM3LjktNzcuNk0xOTMgMTkxLjNjLTMuNSAwLTcgLjEtMTAuNi40LTIzLjUgMi00NS45IDE1LjEtNDYgMzUgMCAxMC4xIDcuMiAxOC4zIDE4LjUgMTcuOSAxMy4yLS40IDI0LTEwLjkgMjkuNy0yNC4xIDIuMi01LTEuOC03LjEtMy43LTQuMi0zLjMgNS03LjkgOS4xLTEzLjMgMTEuNy02LjIgMy0xMi44IDIuMi0xNC45LTIuOC0yLjgtNyAzLjEtMTcuNiAxNi41LTIyLjUgMTkuNC03LjEgMzkuNy0yLjQgNTkuMiAxLjIuMyAwIDEuMy42LjQgMS0zLjUgMS45LTYuOSAzLjQtMTIuMyA4LTMuOCAzLjMtOC45IDcuNi0xMi44IDEyLjNzLTYuNiA4LjgtMTAuMiAxMy40Yy0uNS43LTEuMS42LTEuMS42LTguOCAxLjUtMTcuNSAyLjUtMjUuNCA3LjktMS42IDEuMS0yLjMgMy4xLTEuNCA0LjYuOSAxLjMgMi45IDEuNSA0LjMuNSA0LjktMy42IDEwLTUuNCAxNS44LTUuNS4zIDAgLjQuMS40LjJzMCAuMy0uMS40Yy04LjcgMTEuOS0xMC45IDE0LjYtMTcuNCAyMi4xLTMuMyAzLjgtNi42IDctMTAuMyAxMC40LTE0LjkgMTMuNy0zMC44IDEzLjQtMzYuNiA0LjktMy40LTUuMS0zLTEwLjUtLjctMTUgMi44LTUuNSA4LjMtOS41IDEzLTExLjkgMS43LS45IDIuMi0zLjEuNS01LTEuMS0xLjMtMy44LTEuNS01LjctMS4yLTYuMSAxLjEtMTMuMyA1LjctMTcuNSAxMS4xLTQuOCA2LjEtNy4yIDEzLjYtNi40IDIyIDEuNCAxNS4xIDE0IDIzLjkgMjguMyAyMy44IDExLjQtLjEgMjIuMS0zLjUgMzQuOS0xNi40IDEyLTEyLjEgMjIuOS0zMC4xIDMzLjItNDYuOC4zLS41LjUtLjggMi4xLTEgNi40LS44IDE1LjktMS43IDIyLTIgMS40LS4xIDEuNi0uMSAyLjIuNiAxLjYgMiA0IDMuNyA1LjkgNC43LjkuNSAxLjQuNyAyLjEuOC45IDAgMS42LS41IDIuMS0xIC42LS43LjgtMS42LjUtMi4yLS40LS42LTQuNi0yLjktNC43LTMuOS0uMS0uNi42LS43LjYtLjcgMy4xLTEgNi40LTMgOC4zLTYuN3MyLjItOC42LTEuMy0xMS4zYy0zLjEtMi40LTcuOC0yLTExLjUgMS4zLTMuNyAzLjItNC45IDcuOS00LjQgMTIgLjEuNy4xIDEtLjkgMS01LjYuNC0xMSAuNi0xNyAuOS0uNCAwLS41LS4yLS4zLS41IDYuOS0xMS45IDE3LjMtMjAuNCAyOC43LTI4LjguOC0uNi41LTEuNi41LTIuNSAyMC43IDQuNCA0MC42IDEyLjcgNjIuMSAxMi41IDguOS0uMSAxNy40LTEuNCAyNS41LTUuOCA3LjEtMy45IDEwLTcuNCAxMC4yLTExLjEuMi0yLjYtMS42LTQuMi00LjItMy42LTIxLjcgNC45LTQyLjMgNC45LTYzLjkgMi4zLTI0LjgtMy00OC40LTkuMS03Mi45LTltNDMuMiAzNC41Yy41IDAgMSAuMiAxLjQuNSAxLjEgMSAuNiAzLjQtLjYgNS0xLjMgMS44LTMuNCAzLjQtNS4zIDMuOC0uNC4xLS43LS4xLS45LTEtLjMtMi4zLjQtNS4zIDIuOS03LjUuNy0uNSAxLjctLjggMi41LS44bTE3My45LjRoLTEzLjJjLTEgMC0xLjUuMS0xLjkgMS0xLjUgMi45LTIwIDMwLjMtMjMuNCAzNS42LS42LjgtMS4zLjctMS40LS4yLS4zLTMuMi0zLjEtNi44LTcuNC04LjUtMy4zLTEuMy02LjUtMS42LTkuOS0xLjEtNi4xLjgtMTEuNSA0LTE2LjIgNy42LTcuMiA1LjQtMTMuMyAxMi40LTIxLjMgMTcuNi00LjQgMi44LTEwLjMgNS4zLTE0LjMgMS42LTMuNi0zLjMtMy4yLTEwLjcgMi4zLTE2LjQuNi0uNiAxLjMtLjEgMS4yLjQtLjUgMi42LjEgNS4xIDIuMSA2LjkgMi40IDIuMSA1LjkgMi40IDguOCAxIDMuNS0xLjcgNS41LTUgNi4xLTguOC45LTUuOC0zLjYtMTAuOS05LjMtMTEuNC00LjYtLjMtOSAxLjMtMTMuMyA0LjgtMi4yIDEuOC0zLjQgMy4xLTUuMiA1LjctLjUuNi0xLjIuNy0xLjEtLjIuMi03LjQtMi45LTExLjYtOS4xLTExLjgtNC44LS4xLTEwIDIuNS0xNCA1LjctNC40IDMuNS04LjMgOC4xLTEyLjQgMTIuNS0uNS41LTEgLjUtMS4xLS41LS4xLTQuOS0xLjQtOS43LTMuNy0xMy4xLS44LTEuMi0yLjUtMS44LTQtMS0uNy40LTMgMS40LTQuNyAyLjgtLjguNy0xLjIgMS43LS44IDIuOSAyLjIgNy40IDEuNyAxNS43LTEuMyAyMi44LTIuOCA2LjUtOC4yIDEyLjMtMTQuNSAxNC4zLTQuMiAxLjMtOC41LjctMTEuMi0zLTMuNy01LjEtMi4yLTEzLjggMy4zLTIxLjEgNC45LTYuNCAxMS45LTEwLjUgMTguOS0xMy4xLjgtLjMgMS0uOC44LTEuNS0uNC0xLjEtMS0yLjctMS4yLTMuNC0uNi0xLjctMi40LTItNC42LTEuNy01LjEuNi05LjcgMi4zLTE0LjIgNC43LTExLjkgNi4zLTE3LjggMTguNS0yMC40IDI1LTEuMyAzLjEtMi4zIDUuMS0zLjcgNi44LTEuOSAyLjMtNC4yIDQuNC04LjUgOC4yLS40LjMtLjcgMS4xLS40IDEuNy40LjkgMi43IDQgMy4zIDQuMy43LjMgMS41LS4xIDEuOC0uNCAzLTIgNi42LTUuMiA4LjQtNy40LjYtLjcgMS4zLS40IDEuNi43IDEuNiA1LjggNS45IDEwLjUgMTEuOSAxMi41IDEwLjkgMy42IDIyLjItMS42IDMwLjctMTAuOCA1LjQtNS44IDcuNC05LjYgOS40LTEyLjEgMy41LTQuMyAxMC40LTE0IDE4LjctMjAuMiAzLTIuMyA2LjYtNCA4LjQtMi45IDEuNC45IDEuOSAzLjEtLjQgNy4zLTguNCAxNS4yLTIwLjggMzMuMS0yMy4xIDM3LjUtLjQuOC0uMSAxLjMuNyAxLjNoMTIuOGMuNyAwIDEtLjMgMS4zLS44IDYuNS0xMCAxMi41LTE5LjYgMTkuMS0yOS40LjQtLjYuNy0uMS43LjEuMSAyLjMuNyA1LjQgMi4xIDcuNSAyLjUgMy44IDYgNS40IDkuOCA1LjUgMy4xIDAgNC42LS40IDgtMS43IDIuMy0uOSA0LjUtMiA2LjUtMy41IDEtLjcgMS4xLjUgMS4xLjYtMS41IDggLjQgMTcuNCA4LjMgMjEuMyA5LjYgNC43IDIwLTEuOSAyNi4xLTcuOC42LS42IDEuMi0uNSAxLjMuNy4xIDIuMyAxLjIgNC45IDMgNi44IDUuMSA1IDE1LjMgMyAyNS41LTQuOCA2LjYtNSAxMy41LTEyLjEgMTkuNy0xOS43LjItLjMuNC0uOCAwLTEuMi0uOS0xLTIuMy0yLjEtMy4zLTMtLjQtLjQtMS4xLS4zLTEuNCAwLTYuNCA2LTEyLjEgMTIuOC0yMC40IDE4LjUtMi44IDEuOS03LjMgMy41LTkuMy44LS44LTEtLjctMi41LjEtNC40IDIuNC02IDQwLjctNjMuNyA0Mi43LTY3LjEuMi0uNS0uMi0xLS45LTFtLTUzLjYgMzYuMWMxIDAgMS45LjIgMi44LjYgNC43IDIuMiAzLjIgNy42IDEuMSAxMS45LS4xLjMtLjIuNi0uMS45LjEuNC43LjkgMS4yIDEuMS4yLjEuMy4yLjEuNy0xLjYgMy41LTMuMSA1LjQtNS4yIDguNC0xLjkgMi44LTQgNC45LTYuNSA3LTMuOSAzLjItOS4yIDYuNi0xMy43IDQuMy0yLTEtMi44LTMuNy0yLjgtNS45LjEtNi4yIDIuOS0xMi42IDgtMTguOSA1LjItNi4zIDEwLjctMTAuMSAxNS4xLTEwLjEiIHN0eWxlPSJmaWxsOiNmZmYiLz48L3N2Zz4=";   // Ford blue oval (embedded). Swap for the script logo from the client site if you prefer.
+      var IMG = {
+         territory: "https://cdn.alnaghicms.com/storage/ford_common/car-data/side-images/territory_new.webp",
+         everest: "https://cdn.alnaghicms.com/storage/ford_common/car-data/side-images/new-everest.jpg",
+         expedition: "https://cdn.alnaghicms.com/storage/ford_common/car-data/side-images/expedition-25.webp",
+         bronco: "https://cdn.alnaghicms.com/storage/ford_common/car-data/side-images/bronco.webp",
+         broncoraptor: "https://cdn.alnaghicms.com/storage/ford_common/car-data/side-images/bronco-raptor.jpg",
+         mache: "https://cdn.alnaghicms.com/storage/ford_common/car-data/side-images/mach-e.webp",
+         ranger: "https://cdn.alnaghicms.com/storage/ford_common/car-data/side-images/Ranger.webp",
+         rangerraptor: "https://cdn.alnaghicms.com/storage/ford_common/car-data/side-images/ranger_raptor.webp",
+         f150: "https://cdn.alnaghicms.com/storage/ford_common/car-data/side-images/f-150.webp",
+         f150raptor: "https://cdn.alnaghicms.com/storage/ford_common/car-data/side-images/f-150-raptor.webp",
+         mustang: "https://cdn.alnaghicms.com/storage/ford_common/car-data/side-images/new-mustang.webp"
+      };
+
+      /* =====================================================================
+         2) CATALOGUE - edit names/ids to match the client's list exactly
+         ===================================================================== */
+      var CATS = [
+         { name: "Trucks", icon: "truck", items: [["ranger", "2026 Ranger"], ["rangerraptor", "2026 Ranger Raptor"], ["f150", "2026 F-150"], ["f150raptor", "2026 F-150 Raptor"]] },
+         {
+            name: "SUVs", icon: "suv", items: [
+               ["territory", "2026 Territory"], ["everest", "2026 Everest"], ["expedition", "2026 Expedition"], ["bronco", "2026 Bronco"],
+               ["broncoraptor", "2026 Bronco Raptor"], ["mache", "2026 Mustang Mach-E"]]
+         },
+         { name: "Cars", icon: "coupe", items: [["mustang", "2026 Mustang"]] }
+      ];
+      var PER = 4;
+
+      var SIL = {
+         truck: '<path d="M8 78V60l10-4 58-6 28-22q4-4 10-4h52q6 0 10 4l22 22h56q14 0 14 14v14q0 4-4 4h-14a24 24 0 0 0-48 0H112a24 24 0 0 0-48 0H12q-4 0-4-4z" fill="#c9ced8"/><circle cx="88" cy="82" r="17" fill="#8b93a3"/><circle cx="244" cy="82" r="17" fill="#8b93a3"/>',
+         suv: '<path d="M10 80V62q0-8 8-10l40-8 26-26q4-4 10-4h92q8 0 13 5l30 28 48 8q10 2 10 12v13q0 4-4 4h-12a24 24 0 0 0-48 0H100a24 24 0 0 0-48 0H14q-4 0-4-4z" fill="#c9ced8"/><circle cx="76" cy="82" r="18" fill="#8b93a3"/><circle cx="226" cy="82" r="18" fill="#8b93a3"/>',
+         sedan: '<path d="M8 80V66q0-8 8-10l54-10 34-20q6-4 14-4h52q10 0 16 6l26 18 62 10q14 2 14 14v10q0 4-4 4h-16a22 22 0 0 0-44 0H92a22 22 0 0 0-44 0H12q-4 0-4-4z" fill="#c9ced8"/><circle cx="70" cy="82" r="17" fill="#8b93a3"/><circle cx="238" cy="82" r="17" fill="#8b93a3"/>',
+         coupe: '<path d="M6 82V70q0-8 10-10l70-12 46-18q8-3 16-3h30q10 0 16 5l30 14 66 12q12 2 12 12v12q0 4-4 4h-14a21 21 0 0 0-42 0H92a21 21 0 0 0-42 0H10q-4 0-4-4z" fill="#c9ced8"/><circle cx="72" cy="84" r="17" fill="#8b93a3"/><circle cx="238" cy="84" r="17" fill="#8b93a3"/>',
+         van: '<path d="M8 82V30q0-10 10-10h160q10 0 16 8l40 30 44 8q14 3 14 14v10q0 4-4 4h-14a22 22 0 0 0-44 0H90a22 22 0 0 0-44 0H12q-4 0-4-4z" fill="#c9ced8"/><circle cx="68" cy="84" r="17" fill="#8b93a3"/><circle cx="244" cy="84" r="17" fill="#8b93a3"/>'
+      };
+      var FORD_SVG = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 66"><text x="80" y="52" text-anchor="middle" font-family="Brush Script MT,Segoe Script,cursive" font-style="italic" font-weight="700" font-size="58" fill="#00095b">Ford</text></svg>');
+
+      var $ = function (s) { return document.querySelector(s) };
+      var page = {};
+
+      function track(name, data) {
+         var d = data || {}; console.log("[demo-event]", name, d);
+         document.dispatchEvent(new CustomEvent("demo:event", { detail: { name: name, data: d } }));
+      }
+      function toast(m) { var t = $("#toast"); t.textContent = m; t.classList.add("show"); clearTimeout(toast.t); toast.t = setTimeout(function () { t.classList.remove("show") }, 2400) }
+
+      function card(cat, it) {
+         var id = it[0], name = it[1], src = IMG[id];
+         var pic = src ? '<img referrerpolicy="no-referrer" src="' + src + '" alt="' + name + '" data-fb="' + cat.icon + '">' : '<svg viewBox="0 0 300 110" aria-hidden="true">' + SIL[cat.icon] + '</svg>';
+         return '<article class="v" data-product-id="' + id + '" data-category="' + cat.name + '"><div class="pic">' + pic + '</div><h3 class="product-name">' + name + '</h3><button class="btn" data-id="' + id + '" data-cat="' + cat.name + '" data-name="' + name + '">Explore Vehicle</button></article>';
+      }
+
+      function drawCat(ci) {
+         var cat = CATS[ci], pg = page[ci] || 0, pages = Math.ceil(cat.items.length / PER);
+         var slice = cat.items.slice(pg * PER, pg * PER + PER);
+         var html = slice.map(function (it) { return card(cat, it) }).join("");
+         for (var i = slice.length; i < PER; i++)html += '<div class="v empty"></div>';
+         var el = document.getElementById("cat" + ci);
+         el.querySelector(".row").innerHTML = html;
+         var pg_ = el.querySelector(".pager");
+         if (pages > 1) {
+            pg_.style.display = "flex";
+            pg_.querySelector(".prev").disabled = pg === 0;
+            pg_.querySelector(".next").disabled = pg === pages - 1;
+            pg_.querySelector(".num").textContent = (pg + 1) + " / " + pages;
+         } else pg_.style.display = "none";
+         el.querySelectorAll("img[data-fb]").forEach(function (im) { im.onerror = function () { im.outerHTML = '<svg viewBox="0 0 300 110">' + SIL[im.dataset.fb] + '</svg>' } });
+      }
+
+      var CH = '<svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>', CR = '<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>';
+      $("#sections").innerHTML = CATS.map(function (c, i) {
+         return '<section class="cat" id="cat' + i + '" data-category="' + c.name + '"><h2>' + c.name + '</h2><div class="row"></div>' +
+            '<div class="pager"><button class="prev" aria-label="Previous">' + CH + '</button><span class="num"></span><button class="next" aria-label="Next">' + CR + '</button></div></section>';
+      }).join("");
+      CATS.forEach(function (c, i) { page[i] = 0; drawCat(i) });
+
+      document.addEventListener("click", function (e) {
+         var b = e.target.closest(".btn");
+         if (b) { track("product_view", { id: b.dataset.id, name: b.dataset.name, category: b.dataset.cat }); toast(b.dataset.name + " (demo page)"); return }
+         var p = e.target.closest(".pager button");
+         if (p && !p.disabled) {
+            var sec = p.closest(".cat"), ci = +sec.id.replace("cat", "");
+            page[ci] += p.classList.contains("next") ? 1 : -1; drawCat(ci);
+            track("carousel_page", { category: CATS[ci].name, page: page[ci] + 1 });
+         }
+      });
+      $("#burger").onclick = function () { $("#nav").classList.toggle("open") };
+
+      var logo = $("#logoImg"); logo.src = LOGO || FORD_SVG;
+      logo.onerror = function () { logo.onerror = null; logo.src = FORD_SVG };
+      track("page_view", { page: "vehicles" });
+   </script>
+   <!-- ==== ADD YOUR EMARSYS WEB EXTEND SNIPPET HERE (before </body>, if needed) ==== -->
 </body>
+
 </html>
